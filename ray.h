@@ -1,16 +1,18 @@
 #ifndef RAY_H
 #define RAY_H
 
+#include "vec3.h"
+
 class ray {
-	public;
+	public:
 		ray() {}
 		ray(const point3& origin, const vec3& direction): orig(origin), dir(direction) {}
 
-		point3 origin() {
+		point3 origin() const {
 			return orig;
 		}
 
-		vec3 direction() {
+		vec3 direction() const {
 			return dir;
 		}
 
@@ -21,7 +23,7 @@ class ray {
 	public:
 		point3 orig;
 		vec3 dir;
-}
+};
 
 
 #endif

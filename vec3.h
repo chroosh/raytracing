@@ -37,17 +37,19 @@ class vec3 {
 		friend vec3 operator/(const vec3 &v, double t);
 		friend std::ostream& operator<<(std::ostream &out, const vec3 &v);
 	
-		double dot(const vec3 &u, const vec3 &v);
-		vec3 cross(const vec3 &u, const vec3 &v);
-		vec3 unit_vector(vec3 v);
+		
+		// vec3 unit_vector(vec3 v);
 	public:
 		// vec3 is implemented as an array with 3 elements
 		double e[3];
 };
 
-
 // 3 dimensional vector can be used to represent a vector, a point in a 3d field and also an rgb color
 using point3 = vec3;
 using color = vec3;
+
+double dot(const vec3 &u, const vec3 &v);
+vec3 cross(const vec3 &u, const vec3 &v);
+vec3 unit_vector(vec3 v);
 
 #endif
