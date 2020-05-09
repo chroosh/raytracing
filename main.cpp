@@ -7,13 +7,14 @@
 // center = center of sphere
 // radius = radius of sphere
 // {quadratic formula}
-bool hit_sphere(const point3& center, double radius, const ray& r) {
+int hit_sphere(const point3& center, double radius, const ray& r) {
 	vec3 oc = r.origin() - center;
 	auto a = dot(r.direction(), r.direction());
 	auto b = 2.0 * dot(oc, r.direction());
 	auto c = dot(oc, oc) - radius*radius;
 	auto discriminant = b*b - 4*a*c;
 
+	// std::cout << "discriminant = " << discriminant << "\n";
 	return (discriminant > 0);
 }
 
@@ -29,8 +30,10 @@ color ray_color(const ray& r) {
 }
 
 int main() {
-	const int image_width = 256;
-	const int image_height = 256;
+
+	const auto aspect_ratio = 16.0/9.0;
+	const int image_width = 384;
+	const int image_height = static_cast<int>(image_width / aspect_ratio);
 
 
 	// making a ppm image file
@@ -54,4 +57,6 @@ int main() {
 			write_color(std::cout, pixel_color);
 		}
 	}
+
+	std::cerr << "\nDone\n";
 }
