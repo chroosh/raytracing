@@ -13,7 +13,7 @@ class vec3 {
 		vec3(double e0, double e1, double e2) : e{e0, e1, e2} {}
 		
 		// operators
-		const vec3 operator-();
+		vec3 operator-() const;
 		const double operator[](int i) const;
 		double& operator[](int i);
 

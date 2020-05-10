@@ -1,7 +1,7 @@
 #include "./vec3.h"
 
 // negative operator
-const vec3 vec3::operator-() {
+vec3 vec3::operator-() const {
 	return vec3(-e[0], -e[1], -e[2]);
 }
 
