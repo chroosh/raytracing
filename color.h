@@ -2,6 +2,7 @@
 #define COLOR_H
 
 #include "vec3.h"
+#include "common.h"
 #include <iostream>
 
 void write_color(std::ostream &out, color pixel_color, int samples_per_pixel) {
@@ -9,9 +10,10 @@ void write_color(std::ostream &out, color pixel_color, int samples_per_pixel) {
 	auto g = pixel_color.y();
 	auto b = pixel_color.z();
 	// std::cout << r << "\n"
-
+	
 	// divide color total by number of pixels (averaging colors)
 	auto scale = 1.0 / samples_per_pixel;
+
 	r *= scale;
 	g *= scale;
 	b *= scale;

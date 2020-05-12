@@ -29,6 +29,7 @@ bool sphere::hit(const ray& r, double t_min, double t_max, hit_record& rec) cons
 		if (temp > t_min && temp < t_max) {
 			rec.t = temp;
 			rec.p = r.at(rec.t);
+			// is this how you calculate a normal?
 			vec3 outward_normal = (rec.p - center) / radius;
 			rec.set_face_normal(r, outward_normal);
 			return true;
